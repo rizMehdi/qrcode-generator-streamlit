@@ -30,10 +30,10 @@ def generate_qrcode(url):
     img.save(qrcode_path)
     return qrcode_path
 
-main_image = Image.open('static/main_banner.png')
+# main_image = Image.open('static/main_banner.png')
 
 st.image(main_image,use_column_width='auto')
-st.title("✨ QR Code Generator 🚀")
+st.title("✨ QR Code Generator ")
 url = st.text_input("Enter your URL please 👇")
 if url is not None and url != "":
     with st.spinner(f"Generating QR Code... 💫"):
@@ -44,7 +44,7 @@ if url is not None and url != "":
         st.write(' ')
     with col2:
         image = Image.open(qrcode_path)
-        st.image(image, caption='Here\'s the Generated QR Code ✅')
+        st.image(image, caption='Here\'s the Generated QR Code, right-click to download')
     with col3:
         st.write(' ')
 
@@ -52,5 +52,6 @@ else:
     st.warning('⚠ Please enter your URL! 😯')
 
 
-st.markdown("<br><hr><center>Made with ❤️ by <a href='mailto:ralhanprateek@gmail.com?subject=QRCode Generator WebApp!&body=Please specify the issue you are facing with the app.'><strong>Prateek Ralhan</strong></a></center><hr>", unsafe_allow_html=True)
+st.markdown("<br><hr><center>Orginally made for Docker by Prateek Ralhan</center><hr>", unsafe_allow_html=True)
 st.markdown("<style> footer {visibility: hidden;} </style>", unsafe_allow_html=True)
+# 
