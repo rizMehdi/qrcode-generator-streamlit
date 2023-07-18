@@ -4,6 +4,7 @@ from PIL import Image
 import streamlit as st
 from qrcode.image.styledpil import StyledPilImage
 from qrcode.image.styles.colormasks import HorizontalGradiantColorMask
+import os
 
 st.set_page_config(
     page_title="QR Code Generator",
@@ -12,7 +13,7 @@ st.set_page_config(
     initial_sidebar_state="auto",
 )
 
-generated_qrcodes_path = "/generated_qrcodes/"
+generated_qrcodes_path = os.listdir(current_directory) + "/generated_qrcodes/"
 
 def generate_qrcode(url):
     qr = qrcode.QRCode(
