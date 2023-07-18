@@ -36,7 +36,7 @@ def generate_qrcode(url):
 
 # st.image(main_image,use_column_width='auto')
 st.title("✨ QR Code Generator ")
-url = st.text_input("Enter your URL please 👇")
+url = st.text_input("Enter the URL you wish to gernerate the QR code for 👇")
 if url is not None and url != "":
     with st.spinner(f"Generating QR Code... 💫"):
         qrcode_path = generate_qrcode(str(url))
@@ -54,6 +54,15 @@ else:
     st.warning('⚠ Please enter your URL! 😯')
 
 
-st.markdown("<br><hr><center>Orginally made for Docker by Prateek Ralhan</center><hr>", unsafe_allow_html=True)
+
+
+
+st.write(' ')
+st.write(' ')
+st.write(' ')
+st.write(' ')
+st.write(' ')
+st.write(' ')
+
+st.markdown("<br><hr>Orginally made for Docker by Prateek Ralhan, changed for Streamlit share by rizMehdi<hr>", unsafe_allow_html=True)
 st.markdown("<style> footer {visibility: hidden;} </style>", unsafe_allow_html=True)
-# 
