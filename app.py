@@ -25,12 +25,10 @@ def generate_qrcode(url):
     qr.make(fit=True)
     img = qr.make_image(image_factory=StyledPilImage, color_mask=HorizontalGradiantColorMask())
 
-    # current_ts = datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
-    # qrcode_path = "qrcode_" + str(current_ts) + ".png"
-    # qrcode_path = generated_qrcodes_path + "qrcode_" + str(current_ts) + ".png"
-    # img.save(qrcode_path)
-    # return qrcode_path
-    return img
+    current_ts = datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
+    qrcode_path = generated_qrcodes_path + "qrcode_" + str(current_ts) + ".png"
+    img.save(qrcode_path)
+    return qrcode_path
 
 # main_image = Image.open('static/main_banner.png')
 
@@ -38,16 +36,15 @@ def generate_qrcode(url):
 st.title("✨ QR Code Generator ")
 url = st.text_input("Enter your URL please 👇")
 if url is not None and url != "":
-    # with st.spinner(f"Generating QR Code... 💫"):
-        # qrcode_path = generate_qrcode(str(url))
+    with st.spinner(f"Generating QR Code... 💫"):
+        qrcode_path = generate_qrcode(str(url))
 
     col1, col2, col3 = st.columns(3)
     with col1:
         st.write(' ')
     with col2:
-        # image = Image.open(qrcode_path
-        # st.image(image, caption='Here\'s the Generated QR Code, right-click to download')
-        st.image(generate_qrcode(str(url)), caption='Here\'s the Generated QR Code, right-click to download')
+        image = Image.open(qrcode_path)
+        st.image(image, caption='Here\'s the Generated QR Code, right-click to download')
     with col3:
         st.write(' ')
 
