@@ -26,8 +26,9 @@ def generate_qrcode(url):
     img = qr.make_image(image_factory=StyledPilImage, color_mask=HorizontalGradiantColorMask())
 
     current_ts = datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
-    qrcode_path = generated_qrcodes_path + "qrcode_" + str(current_ts) + ".png"
-    img.save(qrcode_path)
+    qrcode_path = "qrcode_" + str(current_ts) + ".png"
+    # qrcode_path = generated_qrcodes_path + "qrcode_" + str(current_ts) + ".png"
+    # img.save(qrcode_path)
     return qrcode_path
 
 # main_image = Image.open('static/main_banner.png')
