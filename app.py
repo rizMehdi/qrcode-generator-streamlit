@@ -13,6 +13,7 @@ st.set_page_config(
     initial_sidebar_state="auto",
 )
 
+current_directory = os.getcwd()
 generated_qrcodes_path = os.listdir(current_directory) + "/generated_qrcodes/"
 
 def generate_qrcode(url):
