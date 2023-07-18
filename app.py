@@ -14,7 +14,7 @@ st.set_page_config(
 )
 
 current_directory = os.getcwd()
-generated_qrcodes_path = os.listdir(current_directory) + "/generated_qrcodes/"
+generated_qrcodes_path =  os.path.join(current_directory , "generated_qrcodes")
 
 def generate_qrcode(url):
     qr = qrcode.QRCode(
